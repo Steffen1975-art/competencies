@@ -3,368 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steffen Koller - Program Owner & Solution Manager</title>
+    <title>Kompetenzen Vorschau v8 (Text angepasst)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        :root {
-            --navbar-height: 42px; /* Default, JS will update */
-        }
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--navbar-height);
-        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #374151;
-            line-height: 1.7;
-            padding-top: var(--navbar-height);
-            margin: 0;
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .web-resume-container {
-            max-width: 1024px;
-            margin: 1.5rem auto;
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .content-padding {
+            background-color: #f0f2f5; 
+            color: #1f2937; 
+            line-height: 1.6;
             padding: 2rem;
+            display: flex; 
+            justify-content: center;
+            align-items: flex-start; 
+            min-height: 100vh;
+        }
+        .preview-container {
+            max-width: 1024px;
+            width:100%;
+            margin: 0 auto; 
+            background-color: #ffffff; 
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            padding: 2rem; 
         }
 
         h2.section-main-title {
-            color: #001639;
-            font-weight: 600;
-            border-bottom: 2px solid #0070D2;
+            color: #001639; 
+            font-weight: 600; 
+            border-bottom: 2px solid #0070D2; 
             padding-bottom: 0.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.75rem;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            margin-top: 0; 
+            margin-bottom: 1rem; 
+            font-size: 1.75rem; 
         }
-        .section-hint { text-align: center; color: #6b7280; font-size: 0.875rem; font-style: italic; margin-top: -1rem; margin-bottom: 1.5rem; }
-        h3.subsection-title {
-            color: #001639;
-            font-weight: 600;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        h4.education-item-title {
-            color: #001639;
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
-            transition: color 0.3s ease;
-        }
-        h4.profile-block-title {
-            color: #001639;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.35rem;
-            transition: color 0.3s ease;
+
+        .section-hint { 
+            text-align: center; 
+            color: #6b7280; 
+            font-size: 0.875rem; 
+            font-style: italic; 
+            margin-bottom: 1.5rem; 
         }
         
-        /* --- Hero Section --- */
-        .hero-section-common { display: flex; flex-direction: column; overflow: hidden; border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; }
-        .hero-c-v2-var2 { background: linear-gradient(155deg, #000b1a 0%, #00224d 100%); color: #ced4da; }
-        .hero-c-v2-var2 .image-pane { padding: 2rem 1rem; display: flex; justify-content: center; align-items: center; }
-        .hero-c-v2-var2 .profile-image-common { width: 11rem; height: 11rem; border: 3px solid #228be6; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .hero-c-v2-var2 .text-pane { padding: 2rem 1.5rem; flex-grow: 1; }
-        .hero-c-v2-var2 .hero-name { font-size: 2.125rem; color: #ffffff; font-weight: 700; }
-        .hero-c-v2-var2 .hero-title { font-size: 1.1rem; color: #adb5bd; margin-top: 0.25rem; }
-        .hero-c-v2-var2 .hero-subtitle { font-size: 0.9rem; color: #868e96; margin-top: 0.25rem; margin-bottom: 0.75rem; }
-        .hero-c-v2-var2 .hero-statement-common { font-size: 1rem; line-height: 1.7; color: #ced4da; margin-top: 1.25rem; margin-bottom: 1.5rem; }
-        .hero-c-v2-var2 .hero-statement-common strong { color: #ffffff; font-weight: 700; }
-        .contact-details-grid { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; margin-top: 1.5rem; }
-        .contact-item { display: inline-flex; align-items: center; font-size: 0.875rem; line-height: 1.2; color: #adb5bd; }
-        .contact-item svg:not(.language-icon-svg) { color: #4dabf7; width: 1rem; height: 1rem; margin-right: 0.4rem; }
-        .language-icon-svg { margin-right: 0.4rem; flex-shrink: 0; width: 1.5rem; height: 1.5rem; vertical-align: middle; fill: #4dabf7; }
-        .language-icon-svg text { fill: #000b1a; transition: fill 0.3s ease; } 
-        .language-items-wrapper { display: flex; align-items: center; gap: 0.35rem; }
-        .language-trigger { font-weight: 500; cursor: pointer; padding: 0.25rem 0.35rem; border-radius: 0.25rem; font-size: 0.875rem; color: #adb5bd; transition: background-color 0.2s, color 0.2s; }
-        .language-trigger:hover { color: #ffffff; background-color: rgba(34,139,230,0.2); }
-        .language-item .language-tooltip { opacity: 0; visibility: hidden; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-0.25rem); margin-bottom: 0.25rem; padding: 0.5rem; background-color: #1e293b; color: white; font-size: 0.75rem; border-radius: 0.375rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 50; white-space: nowrap; transition: opacity 0.2s ease, visibility 0.2s ease; pointer-events: none; }
-        .language-item.relative:hover .language-tooltip { opacity: 1; visibility: visible; }
-
-        @media (min-width: 768px) {
-            .hero-section-common { flex-direction: row; }
-            .hero-c-v2-var2 .image-pane { width: 30%; padding: 3rem 1.5rem;}
-            .hero-c-v2-var2 .text-pane  { width: 70%; padding: 3rem 2.5rem;}
-            .hero-c-v2-var2 .profile-image-common { width: 13rem; height: 13rem;}
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); 
+            gap: 1.5rem; 
         }
 
-        /* --- Competencies Section with Flip Cards --- */
-        .competency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; }
-        .flip-card { background-color: transparent; aspect-ratio: 1 / 1; perspective: 1000px; cursor: pointer; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: left; transition: transform 0.8s; transform-style: preserve-3d; border-radius: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 0.75rem; display: flex; flex-direction: column; padding: 1.25rem; }
-        .flip-card-front { background-color: #f9fafb; border: 1px solid #e5e7eb; justify-content: center; transition: transform 0.2s, box-shadow 0.2s; }
-        .flip-card:hover .flip-card-front { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
-        .flip-card-front::after { content: ''; position: absolute; bottom: 0; right: 0; width: 35px; height: 35px; background: linear-gradient(135deg, rgba(249,250,251,0) 0%, rgba(249,250,251,0) 50%, #e0f2fe 50.1%, #93c5fd 100%); box-shadow: -2px 2px 5px -1px rgba(0,0,0,0.2); transition: all 0.3s ease-in-out; border-radius: 0 0 0.75rem 0; }
-        .flip-card:hover .flip-card-front::after { width: 45px; height: 45px; box-shadow: -4px 4px 10px -2px rgba(0,0,0,0.25); }
-        .flip-card-back { background-color: #e0f2fe; color: #374151; transform: rotateY(180deg); border: 1px solid #bae6fd; }
-        .card-header { display: flex; align-items: flex-start; margin-bottom: 0.75rem; }
-        .card-icon { font-family: 'Material Icons'; font-size: 1.9rem; margin-right: 0.9rem; flex-shrink: 0; margin-top: 0.05rem; color: #001639; }
-        .card-title { font-weight: 600; color: #001639; font-size: 1.05rem; margin-bottom: 0.25rem; }
-        .card-description { font-size: 0.875rem; color: #4b5563; line-height: 1.6; }
-        .expertise-subheader { font-weight: 600; font-size: 0.9rem; color: #005FB8; margin-top: auto; margin-bottom: 0.5rem; border-top: 1px solid #d1e0ff; padding-top: 0.75rem; }
-        .expertise-list { list-style: none; padding-left: 0; font-size: 0.85rem; color: #374151; }
-        .expertise-list li { margin-bottom: 0.35rem; padding-left: 1.25em; position: relative; }
-        .expertise-list li::before { content: "✓"; color: #0070D2; font-weight: bold; position: absolute; left: 0; top: 0.1em; }
-        .expertise-list li strong { font-weight: 500; color: #1e3a8a; }
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            perspective: 1200px;
+            cursor: pointer;
+            border-radius: 0.625rem; 
+        }
 
-        /* --- Generic Carousel Styles --- */
-        .carousel-container { position: relative; } 
-        .carousel-main-area { position: relative; }
-        .carousel-track-container { overflow: hidden; width: 100%; }
-        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
-        .job-experience-card { flex: 0 0 100%; min-width: 100%; box-sizing: border-box; background-color: #f9fafb; border-radius: 0.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 1.5rem 3.5rem; }
-        .carousel-hint { color: #6b7280; }
-        .carousel-button-combined { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 112, 210, 0.6); color: white; border: none; width: 1.8rem; height: 1.8rem; border-radius: 50%; cursor: pointer; z-index: 10; opacity: 0.2; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, opacity 0.3s ease; }
-        .carousel-main-area:hover .carousel-button-combined { opacity: 1; } 
-        .carousel-button-combined:hover { background-color: #005FB8; opacity: 1 !important; } 
-        .carousel-button-combined.prev { left: 0.5rem; }
-        .carousel-button-combined.next { right: 0.5rem; }
-        .carousel-button-combined svg { width: 0.9rem; height: 0.9rem; }
-        .carousel-dots-combined { text-align: center; padding-bottom: 1rem; padding-top: 0.5rem; }
-        .carousel-dot-combined { display: inline-block; width: 0.65rem; height: 0.65rem; margin: 0 0.35rem; background-color: #cbd5e1; border-radius: 50%; cursor: pointer; transition: background-color 0.3s, transform 0.2s; }
-        .carousel-dot-combined.active-dot { background-color: #0070D2; transform: scale(1.2); } 
-        .carousel-dot-combined:hover { background-color: #94a3b8; } 
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 0.625rem; 
+        }
+
+        .flip-card.is-flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.625rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem; 
+            box-sizing: border-box;
+            overflow: hidden; /* Changed from auto to hidden to prevent scrollbars */
+        }
+
+        /* FRONT OF COMPETENCY CARD */
+        .flip-card-front {
+            background-color: #f9fafb; 
+            border: 1px solid #f3f4f6; 
+            color: #4b5563; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+        }
+        .flip-card:hover .flip-card-front {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .flip-card-front::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px; 
+            height: 30px;
+            background: linear-gradient(135deg, transparent 50%, #e0f2fe 50.1%); 
+            border-bottom-right-radius: 0.625rem;
+        }
         
-        /* --- Other Sections --- */
-        .qualification-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .qualification-card-base { background-color: #ffffff; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; }
-        .qualification-card-base:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
-        .education-institution { font-size: 0.875rem; color: #6b7280; margin-top: 0.1rem; margin-bottom: 0.5rem; transition: color 0.3s; }
-        .education-details p { color: #374151; font-size: 0.875rem; line-height: 1.6; transition: color 0.3s; }
-        .education-highlight { font-weight: 600; color: #0070D2; transition: color 0.3s;} 
-        ul.custom-bullets-qual > li { padding-left: 1.75em; position: relative; margin-bottom: 0.5rem; font-size: 0.875rem; color: #374151; transition: color 0.3s; }
-        ul.custom-bullets-qual > li::before { content: "✓"; color: #0070D2; font-weight: bold; position: absolute; left: 0.5em; top: 0.1em; transition: color 0.3s; }
-        .insights-hint { color: #6b7280; }
+        .card-header {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin-bottom: 0.5rem; 
+        }
+        .card-icon {
+            font-family: 'Material Icons';
+            font-size: 2.25rem; 
+            margin-right: 0; 
+            margin-bottom: 0.5rem; 
+            color: #00205b; 
+        }
+        .card-title {
+            font-weight: 600;
+            color: #00205b; 
+            font-size: 1rem; 
+            margin-bottom: 0.25rem; 
+            line-height: 1.3;
+        }
+        .card-description {
+            font-size: 0.8rem; 
+            color: #4b5563; 
+            line-height: 1.4;
+        }
 
-        /* --- Dark Mode --- */
-        body.dark-mode { background-color: #111827; color: #d1d5db; }
-        body.dark-mode .web-resume-container { background-color: #1f2937; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-        body.dark-mode h2.section-main-title { color: #93c5fd; border-bottom-color: #3b82f6; }
-        body.dark-mode .section-hint, body.dark-mode .carousel-hint, body.dark-mode .insights-hint { color: #9ca3af; }
-        body.dark-mode h3.subsection-title, body.dark-mode h4.education-item-title, body.dark-mode h4.profile-block-title { color: #e0e7ff; }
-        body.dark-mode .main-icon-svg, body.dark-mode .education-highlight { color: #93c5fd; }
-        body.dark-mode .job-experience-card ul.custom-bullets > li > strong { color: #a5b4fc; }
-        body.dark-mode #short-profile-section .text-sm, body.dark-mode .job-experience-card ul.custom-bullets > li, body.dark-mode .education-details p, body.dark-mode ul.custom-bullets-qual > li, body.dark-mode .card-description, body.dark-mode .expertise-list li { color: #9ca3af; }
-        body.dark-mode .competency-card { background-color: #2d3748; border-color: #374151; }
-        body.dark-mode .competency-card:hover { box-shadow: 0 4px 16px rgba(186, 230, 253, 0.15); }
-        body.dark-mode .card-icon, body.dark-mode .card-title { color: #e0e7ff; }
-        body.dark-mode .expertise-subheader { color: #93c5fd; border-top-color: #374151;}
-        body.dark-mode .expertise-list li strong { color: #e0f2fe; }
-        body.dark-mode .flip-card-front { background-color: #374151; border-color: #4b5563; }
-        body.dark-mode .flip-card-back { background-color: #2d3748; border-color: #4b5563; color: #d1d5db; }
-        body.dark-mode .flip-card-front::after { background: linear-gradient(135deg, rgba(55,65,81,0) 0%, rgba(55,65,81,0) 50%, #1a2b46 50.1%, #2563eb 100%); }
-        body.dark-mode .job-experience-card { background-color: #2d3748; }
-        body.dark-mode .text-slate-500 { color: #94a3b8; }
-        body.dark-mode .qualification-card-base { background-color: #2d3748; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        body.dark-mode .education-institution { color: #a0aec0; }
-        body.dark-mode .web-footer { color: #a0aec0; border-top-color: #374151; }
-        body.dark-mode .fixed-top-navigation-bar { background-color: #1a2b46; box-shadow: 0 2px 5px rgba(0,0,0,0.25); }
-        body.dark-mode .fixed-top-navigation-bar .quick-links-nav a { color: #93c5fd; }
-        body.dark-mode .fixed-top-navigation-bar .quick-links-nav a:hover { background-color: #2563eb; color: #e0f2fe; }
-        body.dark-mode .nav-divider { background-color: #4a5568; }
-        body.dark-mode .action-button { color: #93c5fd; }
-        body.dark-mode .action-button:hover { background-color: #2563eb; color: #e0f2fe; }
+        /* BACK OF COMPETENCY CARD */
+        .flip-card-back {
+            background-color: #f0f9ff; 
+            border: 1px solid #e0f2fe; 
+            color: #0c4a6e; 
+            transform: rotateY(180deg);
+            justify-content: flex-start; 
+            padding: 1rem; /* Reduced padding slightly for more content space */
+        }
+        .expertise-subheader-title {
+            font-weight: 700; 
+            font-size: 1rem; 
+            color: #00205b; 
+            margin-bottom: 0.5rem; /* Reduced margin */
+            padding-bottom: 0; 
+            border-bottom: none; 
+            width: 100%;
+            text-align:left; 
+        }
+        .expertise-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.8125rem; /* 13px - Adjusted for better fit */
+            margin-top: 0.25rem; /* Reduced margin */
+        }
+        .expertise-list li {
+            margin-bottom: 0.3rem; /* Slightly tighter spacing */
+            padding-left: 1.4em; /* Space for checkmark */
+            position: relative;
+            color: #003366; 
+            line-height: 1.45; /* Adjusted line height */
+        }
+        .expertise-list li::before {
+            content: "✓";
+            color: #0070D2; 
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0.05em; 
+            font-size: 1em; 
+        }
+        .expertise-list li strong {
+            font-weight: 600; 
+            color: #003366; 
+        }
+
+        /* DARK MODE - Competency Flip Cards */
+        body.dark-mode .flip-card-front {
+            background-color: #374151; 
+            border-color: #4b5563; 
+        }
+        body.dark-mode .flip-card-front .card-icon,
+        body.dark-mode .flip-card-front .card-title {
+            color: #e0f2fe; 
+        }
+        body.dark-mode .flip-card-front .card-description {
+            color: #cbd5e1; 
+        }
+        body.dark-mode .flip-card-front::after {
+             background: linear-gradient(135deg, transparent 50%, #0c4a6e 50.1%); 
+        }
+
+        body.dark-mode .flip-card-back {
+            background-color: #0c4a6e; 
+            border-color: #073353; 
+        }
+        body.dark-mode .expertise-subheader-title {
+            color: #e0f2fe; 
+        }
+        body.dark-mode .expertise-list li {
+            color: #bae6fd; 
+        }
+        body.dark-mode .expertise-list li::before {
+            color: #7dd3fc; 
+        }
+        body.dark-mode .expertise-list li strong {
+            color: #f0f9ff; 
+        }
+
+        /* Dark mode for general page elements in preview */
+        body.dark-mode {
+            background-color: #111827; 
+            color: #d1d5db; 
+        }
+        body.dark-mode .preview-container {
+             background-color: #1f2937; 
+             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        body.dark-mode h2.section-main-title {
+            color: #93c5fd; 
+            border-bottom-color: #3b82f6; 
+        }
+        body.dark-mode .section-hint {
+            color: #9ca3af;
+        }
+
     </style>
 </head>
-<body class="bg-slate-100"> 
-
-    <div class="fixed-top-navigation-bar">
-        <!-- Full Navigation Content Here -->
+<body>
+    <div class="preview-container">
+        <section id="competencies-section" class="mb-12">
+            <h2 class="section-main-title">
+                <span class="lang-element" lang="de">Kompetenzen & Expertise</span>
+                <span class="lang-element" lang="en" style="display:none;">Competencies & Expertise</span>
+            </h2>
+            <p class="section-hint">
+                <span class="lang-element" lang="de">Klicke auf eine Kompetenz, um die dahinterliegende Expertise zu entdecken.</span>
+                <span class="lang-element" lang="en" style="display:none;">Click on a competency to discover the underlying expertise.</span>
+            </p>
+            <div class="competency-grid" id="competencyGrid">
+                <!-- Competency cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </section>
     </div>
-
-    <div class="web-resume-container">
-        <!-- Hero Section Content Here -->
-
-        <div class="content-padding">
-            <section class="mb-12" id="short-profile-section">
-                <!-- Short Profile Content Here -->
-            </section>
-
-            <section class="mb-12" id="competencies-section">
-                <h2 class="section-main-title">Kompetenzen & Expertise</h2>
-                <p class="section-hint">Klicke auf eine Kompetenz, um die dahinterliegende Expertise zu entdecken.</p>
-                <div class="competency-grid" id="competencyGrid">
-                    <!-- Competency cards will be dynamically inserted here -->
-                </div>
-            </section>
-            
-            <section class="mb-12" id="professional-experience-section">
-                <h2 class="section-main-title">BERUFSERFAHRUNG</h2>
-                <div class="experience-carousel-container carousel-container">
-                    <p class="text-xs text-center text-slate-500 mt-2 mb-1 italic carousel-hint">Wischen oder klicken für weitere Stationen</p>
-                    <div class="carousel-dots-combined" id="experienceCarouselDots"></div>
-                    <div class="carousel-main-area"> 
-                        <div class="carousel-track-container">
-                            <div class="carousel-track" id="experienceCarouselTrack"></div>
-                        </div>
-                        <button class="carousel-button-combined prev" id="prevExperience"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></button>
-                        <button class="carousel-button-combined next" id="nextExperience"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-12" id="qualification-section">
-                <!-- Qualification Content Here -->
-            </section>
-
-            <section class="mb-12" id="insights-section">
-                 <!-- Insights Content Here -->
-            </section>
-        </div>
-    </div>
-
-    <footer class="web-footer">
-        <p>&copy; <span id="currentYear"></span> Steffen Koller. Alle Rechte vorbehalten.</p>
-    </footer>
 
     <script>
-        // --- DATA ---
-        const competenciesData = [
-            {
-                icon: "loop",
-                titleDe: "Agile Program & Transition Management",
-                descriptionDe: "Effiziente Leitung agiler Programme und Transitionsprojekte mit Fokus auf Leistungssteigerung.",
-                expertiseDe: [
-                    "Internationale <strong>Projektleitung</strong> & Rollout-Management",
-                    "Leitung von <strong>Transitionsprojekten</strong> für Entwicklungsteams mit signifikanter Effizienzsteigerung",
-                    "Aufbau und Operationalisierung von <strong>Application Management Services (AMS)</strong> für integrierte Öko-Systeme",
-                    "Implementierung von nachhaltigen <strong>Lifecycle-Management Prozessen</strong>"
-                ]
-            },
-            {
-                icon: "widgets",
-                titleDe: "Lösungsarchitektur & Solution Management",
-                descriptionDe: "Entwurf und Management von Lösungen für Agenturmodelle, Sales Activity Management (SAM) und POS-Integrationen.",
-                expertiseDe: [
-                    "<strong>Lösungsarchitektur</strong> & komplexe Systemintegrationen (API-basiert, Kafka Event Streaming, Salesforce Platform Events)",
-                    "Entwicklung <strong>skalierbarer Multi-Cloud-Architekturen</strong>",
-                    "Harmonisierung von POS-Systemen in <strong>heterogene CRM-Landschaften</strong>",
-                    "<strong>Massendatenmigration</strong> aus Legacy-Systemen"
-                ]
-            },
-            {
-                icon: "directions_car",
-                titleDe: "Automotive CRM & Digitale Transformation",
-                descriptionDe: "Gestaltung digitaler Kundenprozesse im Automotive-Sektor für Sales, After Sales & Finance Use Cases.",
-                expertiseDe: [
-                    "<strong>Automotive</strong> Branchenexpertise & digitale Transformation im Fahrzeugvertrieb und -service",
-                    "<strong>CRM-Strategie,</strong> -Implementierung & Solution Management (Automotive: Sales, After Sales, Finance; Retail/Wholesale, Agenturmodell)",
-                    "Entwicklung von <strong>Customer Contact Center (CCC) Strategien</strong>"
-                ]
-            },
-            {
-                icon: "hub",
-                titleDe: "Salesforce Platform Leadership",
-                descriptionDe: "Umfassende Steuerung und Entwicklung von Salesforce-Lösungen über Sales, Service, Marketing, Experience & Data Cloud.",
-                expertiseDe: [
-                    "<strong>Salesforce Plattform:</strong> Sales, Service, Marketing, Experience & Data Cloud",
-                    "<strong>Lightning Platform</strong> (LWC, Apex, Flows) für performante Custom-Entwicklungen",
-                    "<strong>Agile Entwicklung</strong> (Scrum, Kanban) & DevOps-Prinzipien",
-                    "Anwendung von <strong>Salesforce Best Practices</strong> in internationalen Entwicklungsteams"
-                ]
-            },
-            {
-                icon: "groups",
-                titleDe: "Stakeholder Management & Kommunikation",
-                descriptionDe: "Effektive Kommunikation und Management von Stakeholder-Erwartungen auf allen Ebenen.",
-                expertiseDe: [
-                    "<strong>Stakeholder Management</strong> & Anforderungsanalyse",
-                    "<strong>Führung</strong> interdisziplinärer & internationaler Teams",
-                    "Einführung <strong>Management Reports</strong> und <strong>Programm-Risikomanagement</strong>"
-                ]
-            },
-            {
-                icon: "auto_awesome",
-                titleDe: "KI im CRM",
-                descriptionDe: "Pilotierung und strategische Implementierung von KI-Lösungen wie Salesforce Agentforce zur Effizienz- und Qualitätssteigerung.",
-                expertiseDe: [
-                     "Salesforce <strong>Agentforce</strong> für KI-gestützte Prozesse",
-                     "<strong>Datenqualitäts- management</strong> & Governance für valide Daten (als Grundlage für KI)",
-                     "Förderung & Pilotierung von KI-Use Cases (inkl. <strong>GenAI/PredAI mit HS Aachen</strong>)"
-                ]
-            }
-        ];
-        
-        const jobExperiencesData = [
-            // ... (The full, corrected jobExperiencesData array as defined in the last prompt) ...
-        ];
+        let currentLang = 'de'; 
 
-        // --- FUNCTIONS ---
+        function setLanguage(newLang) {
+            const elementsToToggle = document.querySelectorAll('.lang-element');
+            elementsToToggle.forEach(el => {
+                if (el.getAttribute('lang') === newLang) {
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            document.documentElement.lang = newLang;
+            currentLang = newLang;
+        }
+        
+        
+            const competenciesData = [
+                {
+                    icon: "loop",
+                    titleDe: "Agile Program & Transition Management",
+                    titleEn: "Agile Program & Transition Management",
+                    descriptionDe: "Effiziente Leitung agiler Programme und Transitionsprojekte mit Fokus auf Leistungssteigerung.",
+                    descriptionEn: "Efficient management of agile programs and transition projects with a focus on performance increase.",
+                    expertiseDe: [
+                        "Internationale <strong>Projektleitung</strong> & Rollout-Management",
+                        "Leitung von <strong>Transitionsprojekten</strong> für Entwicklungsteams mit signifikanter Effizienzsteigerung",
+                        "Aufbau und Operationalisierung von <strong>Application Management Services (AMS)</strong> für integrierte Öko-Systeme",
+                        "Implementierung von nachhaltigen <strong>Lifecycle-Management Prozessen</strong>"
+                    ],
+                    expertiseEn: [
+                        "International <strong>Project Leadership</strong> & Rollout Management",
+                        "Leading <strong>transition projects</strong> for development teams with significant efficiency increase",
+                        "Setup and operationalization of <strong>Application Management Services (AMS)</strong> for integrated eco-systems",
+                        "Implementation of sustainable <strong>Lifecycle Management Processes</strong>"
+                    ]
+                },
+                {
+                    icon: "widgets",
+                    titleDe: "Lösungsarchitektur & Solution Management",
+                    titleEn: "Solution Architecture & Solution Management",
+                    descriptionDe: "Entwurf und Management von Lösungen für Agenturmodelle, Sales Activity Management (SAM) und POS-Integrationen.",
+                    descriptionEn: "Design and management of solutions for agency models, Sales Activity Management (SAM), and POS integrations.",
+                    expertiseDe: [
+                        "<strong>Lösungsarchitektur</strong> & komplexe Systemintegrationen (API-basiert, Kafka Event Streaming, Salesforce Platform Events)",
+                        "Entwicklung <strong>skalierbarer Multi-Cloud-Architekturen</strong>",
+                        "Harmonisierung von POS-Systemen in <strong>heterogene CRM-Landschaften</strong>",
+                        "<strong>Massendatenmigration</strong> aus Legacy-Systemen"
+                    ],
+                    expertiseEn: [
+                        "<strong>Solution Architecture</strong> & Complex System Integrations (API-based, Kafka Event Streaming, Salesforce Platform Events)",
+                        "Development of <strong>scalable Multi-Cloud Architectures</strong>",
+                        "Harmonization of POS systems in <strong>heterogeneous CRM landscapes</strong>",
+                        "<strong>Mass data migration</strong> from legacy systems"
+                    ]
+                },
+                {
+                    icon: "directions_car",
+                    titleDe: "Automotive CRM & Digitale Transformation",
+                    titleEn: "Automotive CRM & Digital Transformation",
+                    descriptionDe: "Gestaltung digitaler Kundenprozesse im Automotive-Sektor für Sales, After Sales & Finance Use Cases.",
+                    descriptionEn: "Designing digital customer processes in the automotive sector for Sales, After Sales & Finance use cases.",
+                    expertiseDe: [
+                        "<strong>Automotive</strong> Branchenexpertise & digitale Transformation im Fahrzeugvertrieb und -service",
+                        "<strong>CRM-Strategie,</strong> -Implementierung & Solution Management (Automotive: Sales, After Sales, Finance; Retail/Wholesale, Agenturmodell)",
+                        "Entwicklung von <strong>Customer Contact Center (CCC) Strategien</strong>"
+                    ],
+                    expertiseEn: [
+                        "<strong>Automotive</strong> Industry Expertise & Digital Transformation in vehicle sales and service",
+                        "<strong>CRM Strategy,</strong> Implementation & Solution Management (Automotive: Sales, After Sales, Finance; Retail/Wholesale, Agency Model)",
+                        "Development of <strong>Customer Contact Center (CCC) Strategies</strong>"
+                    ]
+                },
+                {
+                    icon: "hub",
+                    titleDe: "Salesforce Platform Leadership",
+                    titleEn: "Salesforce Platform Leadership",
+                    descriptionDe: "Umfassende Steuerung und Entwicklung von Salesforce-Lösungen über Sales, Service, Marketing, Experience & Data Cloud.",
+                    descriptionEn: "Comprehensive management and development of Salesforce solutions across Sales, Service, Marketing, Experience & Data Cloud.",
+                    expertiseDe: [
+                        "<strong>Salesforce Plattform:</strong> Sales, Service, Marketing, Experience & Data Cloud",
+                        "<strong>Lightning Platform</strong> (LWC, Apex, Flows) für performante Custom-Entwicklungen",
+                        "<strong>Agile Entwicklung</strong> (Scrum, Kanban) & DevOps-Prinzipien",
+                        "Anwendung von <strong>Salesforce Best Practices</strong> in internationalen Entwicklungsteams"
+                    ],
+                    expertiseEn: [
+                        "<strong>Salesforce Platform:</strong> Sales, Service, Marketing, Experience & Data Cloud",
+                        "<strong>Lightning Platform</strong> (LWC, Apex, Flows) for performant custom developments",
+                        "<strong>Agile Development</strong> (Scrum, Kanban) & DevOps Principles",
+                        "Application of <strong>Salesforce Best Practices</strong> in international development teams"
+                    ]
+                },
+                {
+                    icon: "groups",
+                    titleDe: "Stakeholder Management & Kommunikation",
+                    titleEn: "Stakeholder Management & Communication",
+                    descriptionDe: "Effektive Kommunikation und Management von Stakeholder-Erwartungen auf allen Ebenen.",
+                    descriptionEn: "Effective communication and management of stakeholder expectations on all levels.",
+                    expertiseDe: [
+                        "<strong>Stakeholder Management</strong> & Anforderungsanalyse",
+                        "<strong>Führung</strong> interdisziplinärer & internationaler Teams",
+                        "Einführung <strong>Management Reports</strong> und <strong>Programm-Risikomanagement</strong>"
+                    ],
+                    expertiseEn: [
+                        "<strong>Stakeholder Management</strong> & Requirements Analysis",
+                        "<strong>Leadership</strong> of interdisciplinary & international teams",
+                        "Introduction of <strong>Management Reports</strong> and <strong>Program Risk Management</strong>"
+                    ]
+                },
+                {
+                    icon: "auto_awesome",
+                    titleDe: "KI im CRM",
+                    titleEn: "AI in CRM",
+                    descriptionDe: "Pilotierung und strategische Implementierung von KI-Lösungen wie Salesforce Agentforce zur Effizienz- und Qualitätssteigerung.",
+                    descriptionEn: "Piloting and strategic implementation of AI solutions like Salesforce Agentforce for efficiency and quality improvement.",
+                    expertiseDe: [
+                        "Salesforce <strong>Agentforce</strong> für KI-gestützte Prozesse",
+                        "<strong>Datenqualitäts- management</strong> & Governance für valide Daten (als Grundlage für KI)",
+                        "Förderung & Pilotierung von KI-Use Cases (inkl. <strong>GenAI/PredAI mit HS Aachen</strong>)"
+                    ],
+                    expertiseEn: [
+                        "Salesforce <strong>Agentforce</strong> for AI-driven processes",
+                        "<strong>Data Quality Management</strong> & Governance for valid data (as a basis for AI)",
+                        "Promotion & piloting of AI use cases (incl. <strong>GenAI/PredAI with HS Aachen</strong>)"
+                    ]
+                }
+            ];
+
+        const competencyGrid = document.getElementById('competencyGrid');
+
         function createCompetencyFlipCard(comp) {
             const cardContainer = document.createElement('div');
             cardContainer.classList.add('flip-card');
-            cardContainer.onclick = function() { this.classList.toggle('is-flipped'); };
-
+            
             const cardInner = document.createElement('div');
             cardInner.classList.add('flip-card-inner');
 
+            // --- Front of the Card ---
             const front = document.createElement('div');
             front.classList.add('flip-card-front');
+            
             const frontHeader = document.createElement('div');
-            frontHeader.classList.add('card-header');
+            frontHeader.classList.add('card-header'); 
+            
             const frontIcon = document.createElement('span');
-            frontIcon.classList.add('card-icon', 'material-icons');
+            frontIcon.classList.add('card-icon', 'material-icons'); 
             frontIcon.textContent = comp.icon;
+            
             const frontTextWrapper = document.createElement('div');
+            
             const frontTitle = document.createElement('h4');
-            frontTitle.classList.add('card-title');
-            frontTitle.innerHTML = comp.titleDe;
+            frontTitle.classList.add('card-title'); 
+            const frontTitleDe = document.createElement('span');
+            frontTitleDe.classList.add('lang-element'); frontTitleDe.lang = 'de';
+            frontTitleDe.innerHTML = comp.titleDe;
+            const frontTitleEn = document.createElement('span');
+            frontTitleEn.classList.add('lang-element'); frontTitleEn.lang = 'en';
+            frontTitleEn.innerHTML = comp.titleEn || comp.titleDe; 
+            frontTitle.append(frontTitleDe, frontTitleEn);
+            
             const frontDesc = document.createElement('p');
-            frontDesc.classList.add('card-description');
-            frontDesc.textContent = comp.descriptionDe;
-            frontTextWrapper.append(frontTitle, frontDesc);
-            frontHeader.append(frontIcon, frontTextWrapper);
+            frontDesc.classList.add('card-description'); 
+            const frontDescDe = document.createElement('span');
+            frontDescDe.classList.add('lang-element'); frontDescDe.lang = 'de';
+            frontDescDe.textContent = comp.descriptionDe;
+            const frontDescEn = document.createElement('span');
+            frontDescEn.classList.add('lang-element'); frontDescEn.lang = 'en';
+            frontDescEn.textContent = comp.descriptionEn || comp.descriptionDe; 
+            frontDesc.append(frontDescDe, frontDescEn);
+
+            frontTextWrapper.append(frontTitle, frontDesc); 
+            frontHeader.append(frontIcon, frontTextWrapper); 
             front.appendChild(frontHeader);
 
+
+            // --- Back of the Card ---
             const back = document.createElement('div');
             back.classList.add('flip-card-back');
-            const backTitle = document.createElement('h4');
-            backTitle.classList.add('card-title');
-            backTitle.textContent = 'Expertise:';
+            
+            const backExpertiseTitle = document.createElement('h4'); 
+            backExpertiseTitle.classList.add('expertise-subheader-title'); 
+            const backExpertiseTitleDe = document.createElement('span');
+            backExpertiseTitleDe.classList.add('lang-element'); backExpertiseTitleDe.lang = 'de';
+            backExpertiseTitleDe.textContent = 'Expertise'; 
+            const backExpertiseTitleEn = document.createElement('span');
+            backExpertiseTitleEn.classList.add('lang-element'); backExpertiseTitleEn.lang = 'en';
+            backExpertiseTitleEn.textContent = 'Expertise'; 
+            backExpertiseTitle.append(backExpertiseTitleDe, backExpertiseTitleEn);
+            
             const expertiseList = document.createElement('ul');
             expertiseList.classList.add('expertise-list');
-            comp.expertiseDe.forEach(itemText => {
+            (comp.expertiseDe || []).forEach((itemText, i) => {
                 const li = document.createElement('li');
-                li.innerHTML = itemText;
+                const itemDe = document.createElement('span');
+                itemDe.classList.add('lang-element'); itemDe.lang = 'de';
+                itemDe.innerHTML = itemText;
+                
+                const itemEnText = (comp.expertiseEn && comp.expertiseEn[i]) ? comp.expertiseEn[i] : itemText;
+                const itemEn = document.createElement('span');
+                itemEn.classList.add('lang-element'); itemEn.lang = 'en';
+                itemEn.innerHTML = itemEnText;
+
+                li.append(itemDe, itemEn);
                 expertiseList.appendChild(li);
             });
-            back.append(backTitle, expertiseList);
+            back.append(backExpertiseTitle, expertiseList);
             
             cardInner.append(front, back);
             cardContainer.appendChild(cardInner);
+
+            cardContainer.addEventListener('click', function(event) {
+                if (event.target.closest('a, button')) {
+                    return;
+                }
+                this.classList.toggle('is-flipped');
+            });
             
             return cardContainer;
         }
 
         function populateCompetencies() {
-            const competencyGrid = document.getElementById('competencyGrid');
-            if(!competencyGrid) return;
-            competencyGrid.innerHTML = '';
+            const competencyGridEl = document.getElementById('competencyGrid');
+            if(!competencyGridEl) return;
+            competencyGridEl.innerHTML = '';
             competenciesData.forEach(comp => {
-                competencyGrid.appendChild(createCompetencyFlipCard(comp));
+                competencyGridEl.appendChild(createCompetencyFlipCard(comp));
             });
+            setLanguage(currentLang); 
         }
-        
-        // ... (all other JS functions for language, theme, carousels, etc. will be placed here)
 
         document.addEventListener('DOMContentLoaded', function() {
-            // ... (All initialization calls) ...
             populateCompetencies();
         });
     </script>
